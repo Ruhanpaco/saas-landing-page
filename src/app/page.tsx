@@ -24,7 +24,7 @@ import { useEffect } from 'react';
 
 export default function Home() {
   const controls = useAnimation();
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
 
   useEffect(() => {
     controls.start("visible");
