@@ -13,7 +13,6 @@ import {
   FiTrendingUp,
   FiDatabase,
   FiMessageCircle,
-  FiMenu,
   FiCheck,
   FiGithub,
   FiCloud,
