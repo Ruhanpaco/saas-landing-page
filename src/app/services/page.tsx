@@ -1,8 +1,10 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FiDatabase, FiCloud, FiServer, FiShield, FiGlobe, FiCpu, FiCode, 
-  FiZap, FiArrowRight, FiBox, FiActivity, FiLayers, FiUsers, FiTarget } from "react-icons/fi";
+import { 
+  FiServer, FiShield, FiGlobe, FiDatabase, FiCloud, FiArrowRight,
+  FiLayers, FiUsers, FiTarget
+} from "react-icons/fi";
 import { useState } from 'react';
 
 type ColorKey = 'purple' | 'blue' | 'cyan' | 'pink' | 'green' | 'yellow';
@@ -20,11 +22,33 @@ type ColorMap = {
   [key in ColorKey]: ColorConfig;
 };
 
+type Category = {
+  id: string;
+  label: string;
+  icon: React.ElementType;
+  color: ColorKey;
+};
+
+type Service = {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  features: string[];
+  price: string;
+  color: ColorKey;
+};
+
+type EnterpriseSolution = {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  benefits: string[];
+  color: ColorKey;
+};
+
 export default function Services() {
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
   const [activeTab, setActiveTab] = useState<string>('cloud');
+  const { scrollYProgress } = useScroll();
 
   const colorMap: ColorMap = {
     purple: {
@@ -75,22 +99,6 @@ export default function Services() {
       gradientFrom: 'from-amber-500',
       gradientTo: 'to-orange-500'
     }
-  };
-
-  type Category = {
-    id: string;
-    label: string;
-    icon: React.ElementType;
-    color: ColorKey;
-  };
-
-  type Service = {
-    icon: React.ElementType;
-    title: string;
-    description: string;
-    features: string[];
-    price: string;
-    color: ColorKey;
   };
 
   const categories: Category[] = [
@@ -151,16 +159,6 @@ export default function Services() {
     }
   ];
 
-  // Add type for enterprise solutions
-  type EnterpriseSolution = {
-    icon: React.ElementType;
-    title: string;
-    description: string;
-    benefits: string[];
-    color: ColorKey;
-  };
-
-  // Move enterprise solutions data out of JSX
   const enterpriseSolutions: EnterpriseSolution[] = [
     {
       icon: FiLayers,
@@ -347,7 +345,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Enterprise Solutions - Updated with colorMap */}
+      {/* Enterprise Solutions */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent"></div>
@@ -417,10 +415,12 @@ export default function Services() {
           >
             <motion.button
               className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500
-                text-white font-medium"
+                text-white font-medium overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
+              <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 
+                transition-transform duration-300"></span>
               <span className="relative flex items-center gap-2">
                 Contact Sales
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />

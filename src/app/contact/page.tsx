@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiMail, FiMapPin, FiPhone, FiMessageSquare, FiUser, FiSend, 
+import { FiMail, FiMapPin, FiMessageSquare, FiUser, FiSend, 
   FiGlobe, FiClock, FiLinkedin, FiTwitter, FiGithub } from "react-icons/fi";
 import { useState } from 'react';
 
@@ -98,7 +98,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Have a question or want to learn more? We'd love to hear from you.
+              Have a question or want to learn more? We&apos;d love to hear from you.
             </motion.p>
           </motion.div>
         </div>

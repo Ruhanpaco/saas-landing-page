@@ -358,7 +358,7 @@ export default function Home() {
                 className="p-6 rounded-xl bg-gradient-to-b from-white/[0.1] to-transparent border border-white/[0.1] hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 relative"
               >
                 <FiMessageCircle className="text-cyan-400 w-8 h-8 mb-4" />
-                <p className="text-gray-300 text-sm mb-6 italic leading-relaxed">"{testimonial.quote}"</p>
+                <p className="text-gray-300 text-sm mb-6 italic leading-relaxed">&quot;{testimonial.quote}&quot;</p>
                 <div>
                   <p className="text-white font-semibold text-base">{testimonial.author}</p>
                   <p className="text-gray-400 text-sm">{testimonial.role}</p>

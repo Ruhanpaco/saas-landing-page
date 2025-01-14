@@ -1,14 +1,12 @@
 "use client";
 
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { FiLayers, FiDatabase, FiCloud, FiServer, FiShield, FiGlobe, FiCpu, FiCode, FiZap, FiGitBranch, FiArrowRight, FiBox, FiActivity } from "react-icons/fi";
-import { useEffect, useRef, useState } from 'react';
+import { motion } from "framer-motion";
+import { FiZap, FiLayout, FiShield, FiCode, FiServer, FiBox, 
+  FiArrowRight, FiActivity, FiDatabase, FiCloud, FiGlobe, FiCpu } from "react-icons/fi";
+import { useState } from 'react';
 
 export default function Foundation() {
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
-  const [activeSection, setActiveSection] = useState(0);
+  const [activeTab, setActiveTab] = useState("overview");
 
   return (
     <main className="relative bg-[#0A0A0F]">
@@ -19,8 +17,8 @@ export default function Foundation() {
             <motion.button
               key={item}
               className={`w-3 h-3 rounded-full transition-all duration-300 relative group
-                ${activeSection === index ? 'bg-blue-500' : 'bg-white/20'}`}
-              onClick={() => setActiveSection(index)}
+                ${activeTab === item ? 'bg-blue-500' : 'bg-white/20'}`}
+              onClick={() => setActiveTab(item)}
               whileHover={{ scale: 1.2 }}
             >
               <span className="absolute right-full mr-4 py-1 px-2 rounded-full bg-white/5 backdrop-blur-sm
