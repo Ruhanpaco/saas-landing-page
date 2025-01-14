@@ -3,33 +3,10 @@
 import { motion } from "framer-motion";
 import { FiZap, FiShield, FiCode, FiServer, FiBox, 
   FiArrowRight, FiActivity, FiDatabase, FiCloud, FiGlobe, FiCpu } from "react-icons/fi";
-import { useState } from 'react';
 
 export default function Foundation() {
-  const [activeTab, setActiveTab] = useState("overview");
-
   return (
     <main className="relative bg-[#0A0A0F]">
-      {/* Floating Navigation */}
-      <nav className="fixed top-1/2 right-8 -translate-y-1/2 z-50 hidden lg:block">
-        <div className="space-y-4">
-          {['Overview', 'Architecture', 'Features', 'Performance'].map((item) => (
-            <motion.button
-              key={item}
-              className={`w-3 h-3 rounded-full transition-all duration-300 relative group
-                ${activeTab === item ? 'bg-blue-500' : 'bg-white/20'}`}
-              onClick={() => setActiveTab(item)}
-              whileHover={{ scale: 1.2 }}
-            >
-              <span className="absolute right-full mr-4 py-1 px-2 rounded-full bg-white/5 backdrop-blur-sm
-                text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                {item}
-              </span>
-            </motion.button>
-          ))}
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* 3D Grid Background */}
