@@ -53,32 +53,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0A0A0F] to-[#12121f] overflow-hidden">
-      {/* Navigation Bar */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0F]/80 backdrop-blur-md border-b border-white/5">
-        <div className="container mx-auto px-6 py-4">
-          <nav className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-              MyBrand
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">Home</a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">About</a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">Services</a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">Contact</a>
-              <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all">
-                Get Started
-              </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <button className="md:hidden text-white">
-              <FiMenu size={24} />
-            </button>
-          </nav>
-        </div>
-      </header>
-
       {/* Hero Section with adjusted padding for fixed header */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         {/* Background effects */}
