@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiZap, FiLayout, FiShield, FiCode, FiServer, FiBox, 
+import { FiZap, FiShield, FiCode, FiServer, FiBox, 
   FiArrowRight, FiActivity, FiDatabase, FiCloud, FiGlobe, FiCpu } from "react-icons/fi";
 import { useState } from 'react';
 
@@ -13,7 +13,7 @@ export default function Foundation() {
       {/* Floating Navigation */}
       <nav className="fixed top-1/2 right-8 -translate-y-1/2 z-50 hidden lg:block">
         <div className="space-y-4">
-          {['Overview', 'Architecture', 'Features', 'Performance'].map((item, index) => (
+          {['Overview', 'Architecture', 'Features', 'Performance'].map((item) => (
             <motion.button
               key={item}
               className={`w-3 h-3 rounded-full transition-all duration-300 relative group

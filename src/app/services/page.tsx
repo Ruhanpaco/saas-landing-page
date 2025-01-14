@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useAnimation } from "framer-motion";
 import { 
   FiServer, FiShield, FiGlobe, FiDatabase, FiCloud, FiArrowRight,
   FiLayers, FiUsers, FiTarget
@@ -46,9 +46,10 @@ type EnterpriseSolution = {
   color: ColorKey;
 };
 
-export default function Services() {
+export default function ServicesPage() {
+  const controls = useAnimation();
+  const { scrollY } = useScroll();
   const [activeTab, setActiveTab] = useState<string>('cloud');
-  const { scrollYProgress } = useScroll();
 
   const colorMap: ColorMap = {
     purple: {

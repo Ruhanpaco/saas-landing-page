@@ -1,21 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import {
   FiZap,
   FiLayout,
   FiSliders,
   FiArrowRight,
   FiCode,
-  FiServer,
   FiBox,
   FiCpu,
   FiGlobe,
   FiShield,
   FiTrendingUp,
   FiDatabase,
-  FiUsers,
-  FiAward,
   FiMessageCircle,
   FiMenu,
   FiCheck,
@@ -23,18 +19,14 @@ import {
   FiCloud,
   FiCreditCard,
 } from "react-icons/fi";
-import { motion, useAnimation, Variants, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useAnimation, Variants, useScroll } from "framer-motion";
+import { useEffect } from 'react';
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
   const controls = useAnimation();
   const { scrollYProgress } = useScroll();
 
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
-
   useEffect(() => {
-    setIsVisible(true);
     controls.start("visible");
   }, [controls]);
 

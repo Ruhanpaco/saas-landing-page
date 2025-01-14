@@ -85,7 +85,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <span className="block text-white">Let's Start a</span>
+              <span className="block text-white">Let&apos;s Start a</span>
               <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r 
                 from-blue-500 via-purple-500 to-pink-500">
                 Conversation
