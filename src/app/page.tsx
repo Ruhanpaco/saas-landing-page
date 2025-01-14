@@ -19,12 +19,11 @@ import {
   FiCloud,
   FiCreditCard,
 } from "react-icons/fi";
-import { motion, useAnimation, Variants, useScroll } from "framer-motion";
+import { motion, useAnimation, Variants } from "framer-motion";
 import { useEffect } from 'react';
 
 export default function Home() {
   const controls = useAnimation();
-  const { scrollY } = useScroll();
 
   useEffect(() => {
     controls.start("visible");
